@@ -10,6 +10,18 @@
 // sym([1, 2, 3], [5, 2, 1, 4, 5]) should return [3, 4, 5].
 // sym([1, 2, 5], [2, 3, 5], [3, 4, 5]) should return [1, 4, 5]
 
+// Partial solution
 function sym(args) {
-  return args;
+  const result = [];
+  const argus = [...arguments];
+  for (let i = 0; i < argus.length; i++) {
+    let subArray = argus.slice();
+    subArray.splice(i, 1);
+    const concatSubArray = subArray.reduce((acc, item) => acc.concat(item), []);
+    // console.log(concatSubArray);
+    for (let j = 0; j < argus[i].length; j++) {
+      if (!concatSubArray.includes(argus[i][j]) && !result.includes(argus[i][j])) result.push(argus[i][j]);
+    }
+  }
+  return result;
 }
