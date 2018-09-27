@@ -11,3 +11,6 @@
 
 // Example 3: 
 // permAlone("a") should return 1.
+
+// Example 4: 
+// permAlone("aaab") should return 0.
