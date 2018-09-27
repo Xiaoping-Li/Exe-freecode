@@ -15,3 +15,20 @@
 // updateInventory([[0, "Bowling Ball"], [0, "Dirty Sock"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]]) 
 // should return [[1, "Bowling Ball"], [0, "Dirty Sock"], [1, "Hair Pin"], [1, "Half-Eaten Apple"], [0, "Microphone"], [1, "Toothpaste"]]
 
+// Solutions:
+function updateInventory(arr1, arr2) {
+  const updateObj = (obj, arr) => {
+    for (let i = 0; i < arr.length; i++) {
+      if (obj[arr[i][1]]) {
+        obj[arr[i][1]] += arr[i][0];
+      } else {
+        obj[arr[i][1]] = arr[i][0];
+      }
+    }
+    return obj;
+  }  
+  const arr1Obj = updateObj({}, arr1);
+  const arr1Obj2 = updateObj(arr1Obj, arr2);
+  
+  return Object.keys(arr1Obj2).sort().map(key => [arr1Obj2[key],key]);
+}
