@@ -10,7 +10,7 @@
 // sym([1, 2, 3], [5, 2, 1, 4, 5]) should return [3, 4, 5].
 // sym([1, 2, 5], [2, 3, 5], [3, 4, 5]) should return [1, 4, 5]
 
-// Partial solution
+// Partial solution: Didn't pass tests
 function sym(args) {
   const result = [];
   const argus = [...arguments];
