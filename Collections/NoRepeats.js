@@ -5,3 +5,6 @@
 
 // Example 1: 
 // permAlone("aab") should return 2.
+
+// Example 2: 
+// permAlone("aaa") should return 0.
