@@ -10,6 +10,7 @@
 // sym([1, 2, 3], [5, 2, 1, 4, 5]) should return [3, 4, 5].
 // sym([1, 2, 5], [2, 3, 5], [3, 4, 5]) should return [1, 4, 5]
 
+
 // Partial solution: Didn't pass tests
 function sym(args) {
   const result = [];
@@ -25,6 +26,10 @@ function sym(args) {
   }
   return result;
 }
+
+// Strategy:
+// Find symmetric Difference for more than two arrays, should find the symmetric Difference for the first two, then find the symmetric
+// difference for the third array and the result of last step, recursively until the last array.
 
 // Pass tests solution:
 function sym(args) {
