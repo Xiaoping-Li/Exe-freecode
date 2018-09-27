@@ -25,3 +25,24 @@ function sym(args) {
   }
   return result;
 }
+
+// Pass tests solution:
+function sym(args) {
+  const argsArray = [...arguments];
+
+  let returnVal = argsArray.shift();
+  let nextVal = argsArray.shift();
+  while(nextVal) {
+    let result = [];
+    for (let i = 0; i < returnVal.length; i++) {
+      if (!nextVal.includes(returnVal[i]) && !result.includes(returnVal[i])) result.push(returnVal[i]);
+    }
+    for (let j = 0; j < nextVal.length; j++) {
+      if (!returnVal.includes(nextVal[j]) && !result.includes(nextVal[j])) result.push(nextVal[j]);
+    }
+    returnVal = result;
+    nextVal = argsArray.shift();
+  }
+
+  return returnVal; 
+}
