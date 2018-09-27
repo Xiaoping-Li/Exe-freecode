@@ -8,3 +8,6 @@
 
 // Example 2: 
 // permAlone("aaa") should return 0.
+
+// Example 3: 
+// permAlone("a") should return 1.
