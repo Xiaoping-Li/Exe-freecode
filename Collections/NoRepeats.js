@@ -25,13 +25,11 @@ function permAlone(str) {
   if (strArr.filter(item => item !== strArr[0]).length === 0) return 0;
   
   // Get number of total possible combinations
-  const lengStr = str.length;
   const factorial = (n) => {
     if (n === 1) return 1;
     return n * factorial(n - 1);
   }
-  let possibleCombi = factorial(lengStr);
-  console.log(possibleCombi);
+  let possibleCombi = factorial(str.length);
 
   // Shuffle through integers from [0, str.length - 1]
   const getRandom = (num) => {
@@ -65,7 +63,7 @@ function permAlone(str) {
     return true;
   }
   
-  const count = 0;
+  let count = 0;
   strCombi.forEach(str => {
     if (checkRepeat(str)) count++; 
   });
