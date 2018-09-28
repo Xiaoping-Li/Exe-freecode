@@ -4,3 +4,8 @@
 
 // Instructions: Write a function bubbleSort which takes an array of integers as input and returns an array of these integers in sorted 
 // order from least to greatest.
+
+// Instructions: Starting from the beginning of the list, compare every adjacent pair, swap their position if they are not in the right 
+// order (the latter one is smaller than the former one). After each iteration, one less element (the last one) is needed to be compared 
+// until there are no more elements left to be compared.
+// https://en.wikipedia.org/wiki/Bubble_sort#/media/File:Bubble-sort-example-300px.gif
