@@ -15,14 +15,14 @@ function pairwise(arr, arg) {
   const idxArray = [];
   for (let i = 0; i < arr.length; i++) {
     let current = arr[i];
-    let pair = arg - current;
-    let idx = arr.indexOf(pair);
-    if (idx !== -1 && !idxArray.includes(idx) && i !== idx) {
-      idxArray.push(i, idx);
+    let pairValue = arg - current;
+
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] === pairValue && !idxArray.includes(j) && !idxArray.includes(i)) {
+        idxArray.push(i, j);
+      }
     }
   }
-
-  console.log(idxArray);
   return idxArray.reduce((sum, item) => sum + item, 0);
 }
 
