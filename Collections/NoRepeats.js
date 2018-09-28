@@ -31,19 +31,15 @@ function permAlone(str) {
   }
   let possibleCombi = factorial(str.length);
 
-  // Shuffle through integers from [0, str.length - 1]
-  const getRandom = (num) => {
-    return Math.floor(Math.random() * Math.floor(num));
-  }
-
   const shuffle = (str) => {
-    let result = '';
-    let strArray = str.split('');
-    while (strArray.length !== 0) {
-      let idx = getRandom(strArray.length);
-      result += strArray.splice(idx, 1);
+    const strArray = str.split('');
+    for (let i = str.length - 1; i >= 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = strArray[i];
+      strArray[i] = strArray[j];
+      strArray[j] = temp;
     }
-    return result;
+    return strArray.join('');
   }
 
   const strCombi = [];
