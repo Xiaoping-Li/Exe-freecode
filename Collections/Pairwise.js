@@ -9,3 +9,21 @@
 
 // Example:
 // pairwise([0, 0, 0, 0, 1, 1], 1) should return 10.
+
+// Solution:
+function pairwise(arr, arg) {
+  const idxArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    let current = arr[i];
+    let pair = arg - current;
+    let idx = arr.indexOf(pair);
+    if (idx !== -1 && !idxArray.includes(idx) && i !== idx) {
+      idxArray.push(i, idx);
+    }
+  }
+
+  console.log(idxArray);
+  return idxArray.reduce((sum, item) => sum + item, 0);
+}
+
+pairwise([0, 0, 0, 0, 1, 1], 1);
