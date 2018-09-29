@@ -9,3 +9,7 @@
 // Instructions: Write a function quickSort which takes an array of integers as input and returns an array of these integers in sorted 
 // order from least to greatest. While the choice of the pivot value is important, any pivot will do for our purposes here. 
 // For simplicity, the first or last element could be used.
+
+// Quicksort is a comparison sort, meaning that it can sort items of any type for which a "less-than" relation (formally, a total order) is
+// defined. In efficient implementations it is not a stable sort, meaning that the relative order of equal sort items is not preserved. 
+
