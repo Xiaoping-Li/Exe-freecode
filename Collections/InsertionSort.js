@@ -11,7 +11,7 @@
 // It repeats until no input elements remain.
 // https://en.wikipedia.org/wiki/Insertion_sort
 
-// Solutions: Time complexity: Big O(n * n * n) worst case for array.splice Big O (n)
+// Solution 1: Time complexity: Big O(n * n * n) worst case for array.splice Big O (n)
 function insertionSort(array) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] < array[i - 1]) {
@@ -23,6 +23,23 @@ function insertionSort(array) {
       }
     }
   }
+  return array;
+}
+
+// Solution 2: Time complexity: Big O(n * n)
+function insertionSort(array) {
+  // change code below this line
+  for (let i = 0; i < array.length; i++) {
+    let temp = array[i];
+    for (let j = i - 1; j >= 0; j--) {
+      if (array[j] > temp) {
+        let swapVal = array[j];
+        array[j + 1] = swapVal;
+        array[j] = temp;
+      }
+    }
+  }
+  // change code above this line
   return array;
 }
 
