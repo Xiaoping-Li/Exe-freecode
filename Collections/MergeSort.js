@@ -15,3 +15,8 @@
 // Step 2 − divide the list recursively into two halves until it can no more be divided.
 // Step 3 − merge the smaller lists into new list in sorted order.
 // https://www.tutorialspoint.com/data_structures_algorithms/merge_sort_algorithm.htm
+
+// Instructions: Write a function mergeSort which takes an array of integers as input and returns an array of these integers in sorted 
+// order from least to greatest. A good way to implement this is to write one function, for instance merge, which is responsible for 
+// merging two sorted arrays, and another function, for instance mergeSort, which is responsible for the recursion that produces 
+// single-item arrays to feed into merge.
