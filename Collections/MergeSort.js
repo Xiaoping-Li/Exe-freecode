@@ -7,3 +7,11 @@
 
 // 1) Recursively split the input array in half until a sub-array with only one element is produced.
 // 2) Merge each sorted sub-array together to produce the final sorted array.
+
+// Algorithm
+// Merge sort keeps on dividing the list into equal halves until it can no more be divided. By definition, if it is only one element in the
+// list, it is sorted. Then, merge sort combines the smaller sorted lists keeping the new list sorted too.
+// Step 1 − if it is only one element in the list it is already sorted, return.
+// Step 2 − divide the list recursively into two halves until it can no more be divided.
+// Step 3 − merge the smaller lists into new list in sorted order.
+// https://www.tutorialspoint.com/data_structures_algorithms/merge_sort_algorithm.htm
