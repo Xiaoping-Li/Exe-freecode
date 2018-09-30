@@ -4,3 +4,6 @@
 // an array with one item. A single-item array is naturally sorted, so then we can start combining. This combination will unwind the 
 // recursive calls that split the original array, eventually producing a final sorted array of all the elements. The steps of merge sort, 
 // then, are:
+
+// 1) Recursively split the input array in half until a sub-array with only one element is produced.
+// 2) Merge each sorted sub-array together to produce the final sorted array.
