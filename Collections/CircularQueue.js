@@ -10,3 +10,13 @@
 // [a, b, c, 4, 5]
 // ^Read @ 0
 // ^Write @ 3
+
+// As the read head reads, it can remove values or keep them:
+// [null, null, null, 4, 5]
+// ^Read @ 3
+// ^Write @ 3
+// Once the write reaches the end of the array it loops back to the beginning:
+// [f, null, null, d, e]
+// ^Read @ 3
+// ^Write @ 1
+// This approach requires a constant amount of memory but allows files of a much larger size to be processed.
