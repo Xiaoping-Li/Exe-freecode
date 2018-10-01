@@ -15,3 +15,52 @@
 // the front of the queue, and finally an isEmpty method that will return true if the queue is empty or false if it is not.
 // The enqueue should accept items with the format shown above (['human', 1]) where 1 represents the priority. The dequeue should return 
 // only the current item, not its priority.
+
+// Solution:
+class PriorityQueue {
+  constructor() {
+    this.storage = [];
+  }
+
+  enqueue(element) {
+    // Add element to the end of the queue
+    this.storage.push(element);
+    // Bubble the element up per its priority
+    for (let i = this.storage.length - 2; i >= 0; i--) {
+      let current = this.storage[i];
+      if (element[1] < current[1]) {
+        this.storage[i + 1] = current;
+        this.storage[i] = element;
+      }
+    }
+    return this.storage;
+  }
+  
+  dequeue() {
+    // Only return the item without priority information
+    return this.storage.shift()[0];
+  }
+
+  size() {
+    return this.storage.length;
+  }
+
+  front() {
+    return this.storage[0];
+  }
+
+  isEmpty() {
+    return this.storage.length === 0 ? true : false;
+  }
+}
+
+// [[’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]]
+const pq = new PriorityQueue();
+pq.enqueue(['kitten', 2]);
+pq.enqueue(['dog', 2]);
+pq.enqueue(['rabbit', 2]);
+pq.enqueue(['human', 1]);
+pq.dequeue();
+pq.size();
+pq.front();
+pq.isEmpty();
