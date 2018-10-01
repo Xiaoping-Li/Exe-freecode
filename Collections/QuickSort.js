@@ -17,6 +17,22 @@
 // selection sort, except that it does not always choose worst-case partition.
 // https://en.wikipedia.org/wiki/Quicksort
 
+
+// Quick Sort Pivot Algorithm
+/* 
+Based on our understanding of partitioning in quick sort, we will now try to write an algorithm for it, which is as follows.
+
+Step 1 − Choose the highest index value has pivot
+Step 2 − Take two variables to point left and right of the list excluding pivot
+Step 3 − left points to the low index
+Step 4 − right points to the high
+Step 5 − while value at left is less than pivot move right
+Step 6 − while value at right is greater than pivot move left
+Step 7 − if both step 5 and step 6 does not match swap left and right
+Step 8 − if left ≥ right, the point where they met is new pivot
+*/
+// https://www.tutorialspoint.com/data_structures_algorithms/quick_sort_algorithm.htm
+
 // Solution: Partial
 function quickSort(array) {
   // change code below this line
