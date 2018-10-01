@@ -9,3 +9,9 @@
 // Here the second value (an integer) represents item priority. If we enqueue [‘human’, 1] with a priority of 1 (assuming lower priorities
 // are given precedence) it would then be the first item to be dequeued. The collection would like this:
 // [[‘human’, 1], [’kitten’, 2], [‘dog’, 2], [‘rabbit’, 2]].
+
+// We’ve started writing a PriorityQueue in the code editor. You will need to add an enqueue method for adding items with a priority, a 
+// dequeue method for removing items, a size method to return the number of items in the queue, a front method to return the element at 
+// the front of the queue, and finally an isEmpty method that will return true if the queue is empty or false if it is not.
+// The enqueue should accept items with the format shown above (['human', 1]) where 1 represents the priority. The dequeue should return 
+// only the current item, not its priority.
