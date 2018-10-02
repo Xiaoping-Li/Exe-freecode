@@ -35,21 +35,6 @@ Step 8 − if left ≥ right, the point where they met is new pivot
 
 // Solution: Partial
 function quickSort(array) {
-  // change code below this line
-  let pivot = array[array.length - 1];
-  let left = [];
-  let right = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] <= pivot) {
-      left.push(array[i]);
-    } else {
-      right.push(array[i]);
-    }
-  }
-  
-  if (left.length <= 1 || right.length <= 1) {
-    return left.concat(right);
-  }
-  // change code above this line
+
 }
 
