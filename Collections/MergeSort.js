@@ -21,7 +21,7 @@
 // merging two sorted arrays, and another function, for instance mergeSort, which is responsible for the recursion that produces 
 // single-item arrays to feed into merge.
 
-//Solution:
+//Solution 1:
 function mergeSort(array) {
   if (array.length === 1) return array;
   let n = Math.floor(array.length / 2);
@@ -30,17 +30,15 @@ function mergeSort(array) {
 
   const merge = (left, right) => {
     const mergeArray = [];
-    let leftIdx = 0;
-    let rightIdx = 0;
-    while (leftIdx < left.length && rightIdx < right.length) {
-      if (left[leftIdx] < right[rightIdx]) {
-        mergeArray.push(left[leftIdx]);
-        leftIdx++;
+    
+    while (left.length !== 0 && right.length !== 0) {
+      if (left[0] < right[0]) {
+        mergeArray.push(left.shift());
+      } else {
+        mergeArray.push(right.shift());
       }
-      mergeArray.push(right[rightIdx]);
-      rightIdx++;
     }
-    return mergeArray.concat(left.slice(leftIdx)).concat(right.slice(rightIdx));
+    return mergeArray.concat(left, right);  
   }
 
   return merge(mergeSort(left), mergeSort(right));
