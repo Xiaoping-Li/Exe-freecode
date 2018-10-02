@@ -20,3 +20,31 @@
 // order from least to greatest. A good way to implement this is to write one function, for instance merge, which is responsible for 
 // merging two sorted arrays, and another function, for instance mergeSort, which is responsible for the recursion that produces 
 // single-item arrays to feed into merge.
+
+//Solution:
+function mergeSort(array) {
+  if (array.length === 1) return array;
+  let n = Math.floor(array.length / 2);
+  let left = array.slice(0, n);
+  let right = array.slice(n);
+
+  const merge = (left, right) => {
+    const mergeArray = [];
+    let leftIdx = 0;
+    let rightIdx = 0;
+    while (leftIdx < left.length && rightIdx < right.length) {
+      if (left[leftIdx] < right[rightIdx]) {
+        mergeArray.push(left[leftIdx]);
+        leftIdx++;
+      }
+      mergeArray.push(right[rightIdx]);
+      rightIdx++;
+    }
+    return mergeArray.concat(left.slice(leftIdx)).concat(right.slice(rightIdx));
+  }
+
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+const test = [6,5,3,1,8,7,2,4];
+mergeSort(test);
