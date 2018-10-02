@@ -30,3 +30,56 @@
 // able to advance past data you have written.
 // In addition, the enqueue method should return the item you enqueued if it is successfully and otherwise return null. Similarly, when 
 // you dequeue an item it should be returned and if you cannot dequeue you should return null.
+
+// Solution:
+class CircularQueue {
+   constructor(size) {
+
+     this.queue = [];
+     this.read = 0;
+     this.write = 0;
+     this.max = size - 1;
+
+     while (size > 0) {
+        this.queue.push(null);
+        size--;
+     }
+
+   }
+
+   print() {
+     return this.queue;
+   }
+
+
+   enqueue(item) {
+    // Only change code below this line
+    if (!this.queue[this.write]) {
+      this.queue[this.write] = item;
+      this.write += 1;
+      if (this.write > this.max) {
+        this.write = 0;
+      }
+      return item;
+    } else {
+      return null;
+    }
+    // Only change code above this line
+   }
+
+   dequeue() {
+    // Only change code below this line
+    if (this.queue[this.read]) {
+      const current = this.queue[this.read];
+      this.queue[this.read] = null;
+      this.read++;
+      if (this.read > this.max) {
+        this.read = 0;
+      }
+      return current;
+    } else {
+      return null;
+    }
+    // Only change code above this line
+   }
+}
