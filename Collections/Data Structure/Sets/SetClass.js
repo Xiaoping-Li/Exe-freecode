@@ -66,4 +66,11 @@ function Set() {
       }
       return result;
     }
+    // this method will return true if this is fully contained in set; otherwise return false
+    this.subset = function(set) {
+        for (let i = 0; i < this.size; i++) {
+            if (!set.has(collection[i])) return false;
+        }
+        return true;
+    }
 }
