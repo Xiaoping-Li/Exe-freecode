@@ -56,4 +56,14 @@ function Set() {
         }
         return result;
     }
+    // this method will return the difference of two sets as a new set
+    this.difference = function(set) {
+      const result = new Set();
+      for (let i = 0; i < this.size; i++) {
+        if (!set.has(collection[i])) {
+          result.add(collection[i]);
+        }
+      }
+      return result;
+    }
 }
