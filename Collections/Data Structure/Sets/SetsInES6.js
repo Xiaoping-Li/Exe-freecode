@@ -6,3 +6,5 @@
 // Once you have created a set, you can add the values you wish using the add method:
   // var set = new Set([1, 2, 3]);
   // set.add([4, 5, 6]);
+// remove an item from your Set with the delete method.
+  // set.delete(1);
