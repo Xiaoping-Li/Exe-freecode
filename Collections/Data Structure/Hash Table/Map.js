@@ -3,7 +3,8 @@
 
 // The new version of JavaScript provides us with a built-in Map object. This Map object, although similar to regular JavaScript objects, 
 // provides some useful functionality that normal objects lack. For example, an ES6 Map tracks the insertion order of items that are added 
-// to it. Here is a more complete overview of its methods:
+// to it. Here is a more complete overview of its methods: 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 
 // .has(key): The has() method returns a boolean indicating whether an element with the specified key exists or not.
 
