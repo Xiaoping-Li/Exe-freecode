@@ -5,11 +5,11 @@
 // provides some useful functionality that normal objects lack. For example, an ES6 Map tracks the insertion order of items that are added 
 // to it. Here is a more complete overview of its methods:
 
-// .has(key) returns true or false based on the presence of a key
+// .has(key): The has() method returns a boolean indicating whether an element with the specified key exists or not.
 
 // .get(key) returns the value associated with a key
 
-// .set(key, value) sets a new key, value pair
+// .set(key, value): The set() method adds or updates an element with a specified key and value to a Map object.
 
 // .delete(key) removes a key, value pair
 
