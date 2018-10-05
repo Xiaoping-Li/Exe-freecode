@@ -111,4 +111,26 @@ function LinkedList() {
       length--;
       return current.element;
   };
+  // Adds an element at a given index. Return false if an element was unable to be added.
+  this.addAt = function(index, element) {
+  if (index < 0 || index >= this.size()) return false;
+  let prev;
+  let current = head;
+  const newNode = new Node(element);
+  if (index === 0) {
+    newNode.next = head;
+    head = newNode;
+    length++;
+    return true;
+  } else {
+    while (index > 0) {
+      prev = current;
+      current = current.next;
+      index--;
+    }
+    prev.next = newNode;
+    newNode.next = current;
+    length++;
+    return true;
+  };
 }
