@@ -64,4 +64,32 @@ function LinkedList() {
 //     }
 //     length --;
 //   };
+  // Return Boolean that checks if the linked list is empty
+  this.isEmpty = function() {
+    return this.size() === 0;
+  }
+  // returns the index of a given element, If the element is not found in the linked list, return -1
+  this.indexOf = function(element) {
+    let current = head;
+    let index = 0;
+    while(current) {
+      if (current.element === element) return index;
+      current = current.next;
+      index++;
+    }
+    return -1;
+  }
+  // returns the element at the given index. If no element is found, return undefined.
+  this.elementAt = function(index) {
+    if (index >= this.size() || index < 0 || !head) {
+      return undefined;
+    } else {
+      let current = head;
+      while (index > 0) {
+        current = current.next;
+        index--;
+      }
+      return current.element;
+    } 
+  }
 }
