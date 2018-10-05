@@ -91,5 +91,24 @@ function LinkedList() {
       }
       return current.element;
     } 
-  }
+  };
+  // removes and returns a node at a given index
+  this.removeAt = function(index) {
+    if (index < 0 || index >= this.size() || !head) return null;
+    let prev;
+    let current = head;
+    if (index === 0) {
+      head = head.next;
+      length--;
+      return current.element;
+    } else {
+      while (index > 0) {
+        prev = current;
+        current = current.next;
+        index--;
+      }
+      prev.next = current.next;
+      length--;
+      return current.element;
+  };
 }
