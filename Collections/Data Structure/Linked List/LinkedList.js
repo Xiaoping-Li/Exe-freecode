@@ -33,13 +33,7 @@ function LinkedList() {
   }; 
   // Remove element from Linked List if element exist
   this.remove = function(element){
-    if (!head.next && head.element === element) {
-      head = null;
-      length--;
-      return element;
-    }
-
-    if (head.next && head.element === element) {
+    if (head.element === element) {
       head = head.next;
       length--;
       return element;
@@ -51,7 +45,7 @@ function LinkedList() {
       if (current.element === element) {
         prev.next = current.next;
         length--;
-        break;
+        return element;
       }
       prev = prev.next;
     }
