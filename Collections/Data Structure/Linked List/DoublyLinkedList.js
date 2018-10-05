@@ -2,14 +2,14 @@
 // This allows us to traverse the list in both directions but it also requires more memory to be used because every node must contain an 
 // additional reference to the previous node in the list.
 
-// Define Node class
+// Define Node object
 const Node = function(data, prev) {
   this.data = data;
   this.prev = prev;
   this.next = null;
 };
 
-// Defind Double Linked List class
+// Defind Double Linked List object
 const DoublyLinkedList = function() {
   this.head = null;
   this.tail = null;
