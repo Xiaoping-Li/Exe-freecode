@@ -64,5 +64,8 @@ const DoublyLinkedList = function() {
       current.prev.next = null;
       this.tail = prevTail;
     }
-  };  
+  };
+  
+  // Reverse a Doubly Linked List. Trying to reverse an empty list should return null.
+  
 };
