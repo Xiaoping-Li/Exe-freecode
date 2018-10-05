@@ -21,16 +21,14 @@ function LinkedList() {
         head = node;
     } else {
         let currentNode = head;
-
         while(currentNode.next){
             currentNode  = currentNode.next;
         }
-
         currentNode.next = node;
     }
-
     length++;
   }; 
+  
   // Remove element from Linked List if element exist
   this.remove = function(element){
     if (head.element === element) {
@@ -51,4 +49,19 @@ function LinkedList() {
     }
     return null;
   };
+  
+//   this.remove = function(element){
+//     var currentNode = head;
+//     var previousNode;
+//     if(currentNode.element === element){
+//         head = currentNode.next;
+//     } else {
+//         while(currentNode.element !== element) {
+//             previousNode = currentNode;
+//             currentNode = currentNode.next;
+//         }
+//         previousNode.next = currentNode.next;
+//     }
+//     length --;
+//   };
 }
