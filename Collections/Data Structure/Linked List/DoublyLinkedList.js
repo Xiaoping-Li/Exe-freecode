@@ -67,5 +67,28 @@ const DoublyLinkedList = function() {
   };
   
   // Reverse a Doubly Linked List. Trying to reverse an empty list should return null.
-  
+  this.reverse = function() {
+    // Empty list
+    if (!this.head) return null;
+    // One item list
+    if (!this.head.next) return;
+    // Change head and tail pointer
+    const currentHead = this.head;
+    const currentTail = this.tail;
+    this.head = currentTail;
+    this.tail = currentHead;
+    // Loop through the whole list from the former head (now is the tail)
+    let current = this.tail;
+    let next = current.next;
+    current.next = null;
+    current.prev = next;
+    // Loop througth the list
+    while (current.prev) {
+      current = current.prev;
+      let currentPrev = current.prev;
+      let currentNext = current.next;
+      current.prev = currentNext;
+      current.next = currentPrev;
+    }
+  }
 };
