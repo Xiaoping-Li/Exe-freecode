@@ -30,4 +30,7 @@ function BinarySearchTree() {
     return value;
   }
   // 
+  this.findMin = function() {
+
+  };
 }
