@@ -29,8 +29,22 @@ function BinarySearchTree() {
     }
     return value;
   }
-  // 
+  // Find Min value in the tree
   this.findMin = function() {
-
+    if (!this.root) return null;
+    let min = this.root;
+    while (min.left) {
+      min = min.left.root;
+    }
+    return min.value;
+  };
+  // Find Max value in the tree
+  this.findMax = function() {
+    if (!this.root) return null;
+    let max = this.root;
+    while (max.right) {
+        max = max.right.root;
+    }
+    return max.value;
   };
 }
