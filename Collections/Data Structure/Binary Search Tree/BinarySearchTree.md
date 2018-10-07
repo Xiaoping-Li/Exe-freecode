@@ -6,4 +6,6 @@ The root node is the top of the tree. Data points in the tree are called nodes. 
 
 While the tree data structure can have any number of branches at a single node, a `binary tree` can only have two branches for every node. Furthermore, a `binary search tree` is ordered with respect to the child subtrees, such that the value of each node in the left subtree is less than or equal to the value of the parent node, and the value of each node in the right subtree is greater than or equal to the value of the parent node. 
 
+Binary search trees are very common and useful data structures because they provide logarithmic time in the average case for several common operations such as lookup, insertion, and deletion.
+
 
