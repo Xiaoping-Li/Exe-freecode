@@ -8,26 +8,37 @@ function BinarySearchTree() {
   this.root = null;
   // Add node method
   this.add = function(value) {
-    if (!this.root) {
-      this.root = new Node(value);
-    } else {
-      if (this.root.value >= value) {
-        if (this.root.left) {
-          this.root.left.add(value);
+    // BST basics are nodes, insert function recurses per node
+    const insert = (node, value) => {
+      if (node.value === value) return null;
+
+      if (node.value > value) {
+        if (!node.left) {
+          node.left = new Node(value);
+          return;
         } else {
-          this.root.left = new BinarySearchTree();
-          this.root.left.root = new Node(value);
+          node = node.left;
+          insert(node, value);
         }
-      } else {
-        if (this.root.right) {
-          this.root.right.add(value);
+      }
+
+      if (node.value < value) {
+        if (!node.right) {
+          node.right = new Node(value);
+          return;
         } else {
-          this.root.right = new BinarySearchTree();
-          this.root.right.root = new Node(value);
+          node = node.right;
+          insert(node, value);
         }
       }
     }
-    return value;
+    // Set up BST.root, if it is null
+    if (!this.root) {
+      this.root = new Node(value);
+    }
+    // Recurse through all nodes started from this.root
+    let current = this.root;
+    insert(current, value);
   }
   // Find Min value in the tree
   this.findMin = function() {
